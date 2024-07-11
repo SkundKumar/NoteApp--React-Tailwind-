@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { motion } from 'framer-motion'; 
 function Background() {
   return (
     <div className='fixed z-[2] w-full h-screen'> 

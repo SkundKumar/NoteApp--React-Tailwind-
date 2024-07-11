@@ -1,13 +1,13 @@
 import React from 'react'
 import Card from './Card'
+
 function Foreground() {
   return (
-    <div> 
-     <div className='fixed z-[3] top-0 left-0 w-full h-full'>
-     <Card />
-     </div>
-     
-
+    <div className='relative z-10 flex flex-wrap gap-4 p-4'>
+      <Card />
+      <Card />
+      <Card />
+      <Card />
     </div>
   )
 }
