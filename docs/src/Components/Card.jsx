@@ -5,10 +5,12 @@ import { GrExpand } from "react-icons/gr";
 import Modal from "./Modal";
 import ExpandableNote from "./ExpandableNote";
 import { motion } from "framer-motion";
+import Note from "./Note";
+import notes from "../note";
+import notess from "../noteModal";
 
 
-
-function Card() {
+function Card({title,content}) {
   {/* useState to toggle the modal/expandableNote */}
   const [showModal, setModal] = React.useState(false);
   return (
@@ -17,12 +19,9 @@ function Card() {
       <div className=" relative w-60 h-72 rounded-[50px] bg-zinc-900 text-zinc-500 px-6 py-7 overflow-hidden">
         <FaRegFileAlt /> {/* Document Logo*/}
         {/* preview content and title */}
-        <div className="mt-5 mr-3 font-semibold overflow-y-auto h-full hide-scrollbar">
-        <h1 className="text-xl bg-zinc-700/25 rounded-full flex justify-center items-center mb-3">Title</h1>
-        <p>
-            Lorem ipsum dolor sit amet. ipsum dolor sit amet. es possimus qui suscipit?
-          </p>
-        </div>
+        
+        <Note title={title} content={content} />
+        
         {/* footer with a button to expand and delete*/}
         <div className="Footer absolute w-full bottom-0 left-0  text-emerald-200">
           {/* Delete button...using framer to animate them a little*/}
@@ -50,7 +49,15 @@ function Card() {
         </div>
       </div>
       {/*to open as well as close the modal */}
-      {showModal && <Modal onClose={() => setModal(false)} />}
+      {showModal &&  (
+    <Modal
+      key={title}
+      title={title}
+      content={content}
+      onClose={() => setModal(false)}
+    />
+  )}
+
     </div>
   );
 }

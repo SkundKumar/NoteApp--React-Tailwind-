@@ -7,7 +7,7 @@ import Foreground from './Components/Foreground'
 
 function App() {
   return (
-    <div className='relative w-full h-screen bg-zinc-800'>
+    <div className='relative w-full min-h-screen max-h-full bg-zinc-800'>
      {/*background of the screen which contains the name of the project
      background so it cannot be selected and wont interfere with thy project*/} 
      <Background />
